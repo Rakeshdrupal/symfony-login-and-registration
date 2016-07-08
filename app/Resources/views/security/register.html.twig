@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+ {% block stylesheets %}
+      {{ parent() }}
+
+
+            <link rel="stylesheet"
+                  href="{{ asset('public/css/signin.css') }}">
+ {% endblock %}
+{% block body %}
+{#{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}#}
+<div class="container">
+<form class="form-signin" name='register_form' id='register_form' method='post' action='{{path('create')}}'>
+   {{ form_widget(form.username, {'attr': {'class': 'form-control', 'placeholder':'User Name'}}) }}<br>
+
+    {{ form_widget(form.password, {'attr': {'class': 'form-control', 'placeholder':'Password'}}) }}
+
+    {{ form_widget(form.confirm, {'attr': {'class': 'form-control', 'placeholder':'Confirm Password'}}) }}
+
+    {{ form_widget(form.homepage, {'attr': {'class': 'form-control', 'placeholder':'Homepage'}}) }}
+ 
+    {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder':'Email'}}) }}
+                
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="remember-me" required checked>Disclaimer
+        </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+</form>
+</div>  
+    {% endblock %}
+    
+
+  

@@ -1,0 +1,29 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+register:
+    path: /register
+    defaults: { _controller: AppBundle:Security:registration} 
+create:
+    path: /create
+    defaults: { _controller: AppBundle:Security:create} 
+    
+
+logout:
+    path: /logout
+    
+login:
+    path: /login
+    defaults: { _controller: AppBundle:Security:login} 
+    
+invite:
+    path: /invite
+    defaults: { _controller: AppBundle:Security:doinvite}     
+        
+login_check:
+    path: /login_check
+
+after_login:
+	path: /login_after    
+    
